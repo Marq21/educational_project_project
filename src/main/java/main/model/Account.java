@@ -16,7 +16,7 @@ public class Account extends Common {
     public Account() {}
 
     public Account(String title, Currency currency, double startAmount) throws ModelException {
-        if (title.length() == 0) throw new ModelException(ModelException.TITLE_EMPTY);
+        if (title.isEmpty()) throw new ModelException(ModelException.TITLE_EMPTY);
         if (currency == null) throw new ModelException(ModelException.CURRENCY_EMPTY);
         this.title = title;
         this.currency = currency;
@@ -99,7 +99,6 @@ public class Account extends Common {
                 t.setAccount(this);
             }
         }
-
         for (Transfer t : sd.getTransfers()) {
             if (t.getFromAccount().equals(sd.getOldCommon())) {
                 t.setFromAccount(this);

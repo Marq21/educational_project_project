@@ -10,24 +10,26 @@ public class Currency extends Common {
     private String title;
     private String code;
     private double rate;
-    private boolean isOn;
+    private boolean on;
     private boolean base;
 
-    public Currency() {}
+    public Currency() {
+    }
 
     public Currency(String title,
                     String code,
                     double rate,
-                    boolean isOn,
+                    boolean on,
                     boolean base) throws ModelException {
-        if(title.length() == 0) throw new ModelException(ModelException.TITLE_EMPTY);
-        if(code.length() == 0) throw new ModelException(ModelException.CODE_EMPTY);
-        if(rate <= 0) throw new ModelException(ModelException.RATE_INCORRECT);
+        if (title.isEmpty()) throw new ModelException(ModelException.TITLE_EMPTY);
+        if (code.isEmpty()) throw new ModelException(ModelException.CODE_EMPTY);
+        if (rate <= 0) throw new ModelException(ModelException.RATE_INCORRECT);
         this.title = title;
         this.code = code;
         this.rate = rate;
-        this.isOn = isOn;
+        this.on = on;
         this.base = base;
+        if (this.base) this.on = true;
     }
 
     @Override
@@ -64,11 +66,11 @@ public class Currency extends Common {
     }
 
     public boolean isOn() {
-        return isOn;
+        return on;
     }
 
     public void setOn(boolean on) {
-        isOn = on;
+        this.on = on;
     }
 
     public boolean isBase() {
@@ -85,7 +87,7 @@ public class Currency extends Common {
                 "title='" + title + '\'' +
                 ", code='" + code + '\'' +
                 ", rate=" + rate +
-                ", isOn=" + isOn +
+                ", isOn=" + on +
                 ", isBase=" + base +
                 '}';
     }
@@ -104,16 +106,22 @@ public class Currency extends Common {
     }
 
     @Override
-    public void postAdd (SaveData sd) {
+    public void postAdd(SaveData sd) {
         clearBase(sd);
     }
 
     @Override
-    public void postEdit (SaveData sd) {
+    public void postEdit(SaveData sd) {
         clearBase(sd);
-        for (Account a : sd.getAccounts()) {
-            if (a.getCurrency().equals(sd.getOldCommon())) {
-                a.setCurrency(this);
+        for (Currency c : sd.getCurrencies()) {
+            for (Account a : sd.getAccounts()) {
+                if (a.getCurrency().equals(c)) a.setCurrency(c);
+            }
+            for (Transaction t : sd.getTransactions())
+                if (t.getAccount().getCurrency().equals(c)) t.getAccount().setCurrency(c);
+            for (Transfer t : sd.getTransfers()) {
+                if (t.getFromAccount().getCurrency().equals(c)) t.getFromAccount().setCurrency(c);
+                if (t.getToAccount().getCurrency().equals(c)) t.getToAccount().setCurrency(c);
             }
         }
     }
