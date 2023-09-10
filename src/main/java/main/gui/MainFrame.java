@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class MainFrame extends JFrame implements Refresh{
 
-    private GridBagConstraints constraints;
+    private final GridBagConstraints constraints;
     private final MainMenu mb;
     private final LeftPanel lp;
     private RightPanel rp;
@@ -67,7 +67,6 @@ public class MainFrame extends JFrame implements Refresh{
     @Override
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this);
-        mb.refresh();
         tb.refresh();
         lp.refresh();
         rp.refresh();

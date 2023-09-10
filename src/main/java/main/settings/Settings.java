@@ -28,6 +28,7 @@ public final class Settings {
     private static final File FILE_SETTINGS = new File("saves/settings.ini");
 
     private static File FILE_SAVE = new File("saves/default.myrus");
+    private static String LANGUAGE = "ru";
 
     public static void init() {
         try {
@@ -35,6 +36,8 @@ public final class Settings {
             Preferences prefs = new IniPreferences(ini);
             String file = prefs.node("Settings").get("FILE_SAVE", null);
             if (file != null) FILE_SAVE = new File(file);
+            String language = prefs.node("Settings").get("LANGUAGE", null);
+            if (language != null) LANGUAGE = language;
             setLocale();
         } catch (IOException e) {
             save();
@@ -50,10 +53,21 @@ public final class Settings {
         save();
     }
 
+    public static String getLanguage() {
+        return LANGUAGE;
+    }
+
+    public static void setLanguage(String language) {
+        LANGUAGE = language;
+        setLocale();
+        save();
+    }
+
     private static void save() {
         try {
             Wini ini = new Wini(FILE_SETTINGS);
             if (FILE_SAVE != null) ini.put("Settings", "FILE_SAVE", FILE_SAVE.getAbsolutePath().replace("\\", "\\\\"));
+            ini.put("Settings", "LANGUAGE", LANGUAGE);
             ini.store();
         } catch (IOException e) {
             Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, e);
@@ -61,7 +75,8 @@ public final class Settings {
     }
 
     private static void setLocale() {
-        Locale.setDefault(new Locale("ru"));
-    }
+        if (LANGUAGE.equals("ru")) Locale.setDefault(new Locale("ru"));
+        else Locale.setDefault(new Locale("en"));
 
+    }
 }
