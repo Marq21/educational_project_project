@@ -5,6 +5,7 @@ import main.gui.MainFrame;
 import main.gui.Refresh;
 import main.gui.handler.*;
 import main.settings.HandlerCode;
+import main.settings.Settings;
 import main.settings.Style;
 import main.settings.Text;
 
@@ -30,21 +31,25 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete {
         JMenu file = new JMenu(Text.get("MENU_FILE"));
         JMenu edit = new JMenu(Text.get("MENU_EDIT"));
         JMenu view = new JMenu(Text.get("MENU_VIEW"));
+        JMenu settings = new JMenu(Text.get("MENU_SETTINGS"));
         JMenu help = new JMenu(Text.get("MENU_HELP"));
 
         file.setIcon(Style.ICON_MENU_FILE);
         edit.setIcon(Style.ICON_MENU_EDIT);
         view.setIcon(Style.ICON_MENU_VIEW);
+        settings.setIcon(ICON_MENU_SETTINGS);
         help.setIcon(Style.ICON_MENU_HELP);
 
         add(file);
         add(edit);
         add(view);
+        add(settings);
         add(help);
 
         MenuFileHandler fileHandler = new MenuFileHandler(frame);
         MenuEditHandler editHandler = new MenuEditHandler(frame);
         MenuViewHandler viewHandler = new MenuViewHandler(frame);
+        MenuSettingsHandler settingsHandler = new MenuSettingsHandler(frame);
         MenuHelpHandler helpHandler = new MenuHelpHandler(frame);
 
         addMenuItem(file, fileHandler, Text.get("MENU_FILE_NEW"), Style.ICON_MENU_FILE_NEW, HandlerCode.MENU_FILE_NEW, KeyEvent.VK_N);
@@ -67,6 +72,30 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete {
         addMenuItem(view, viewHandler, Text.get("MENU_VIEW_TRANSFERS"), Style.ICON_MENU_VIEW_TRANSFERS, HandlerCode.MENU_VIEW_TRANSFERS);
         addMenuItem(view, viewHandler, Text.get("MENU_VIEW_CURRENCIES"), Style.ICON_MENU_VIEW_CURRENCIES, HandlerCode.MENU_VIEW_CURRENCIES);
         addMenuItem(view, viewHandler, Text.get("MENU_VIEW_STATISTICS"), Style.ICON_MENU_VIEW_STATISTICS, HandlerCode.MENU_VIEW_STATISTICS);
+
+        JMenu language = new JMenu(Text.get("MENU_SETTINGS_LANGUAGE"));
+        language.setIcon(ICON_MENU_SETTINGS_LANGUAGE);
+        settings.add(language);
+
+        ButtonGroup group = new ButtonGroup();
+        JRadioButtonMenuItem menuRussian = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_RUSSIAN"));
+        JRadioButtonMenuItem menuEnglish = new JRadioButtonMenuItem(Text.get("MENU_SETTINGS_LANGUAGE_ENGLISH"));
+        group.add(menuRussian);
+        group.add(menuEnglish);
+
+        menuRussian.setIcon(ICON_MENU_SETTINGS_LANGUAGE_RUSSIAN);
+        menuEnglish.setIcon(ICON_MENU_SETTINGS_LANGUAGE_ENGLISH);
+        menuRussian.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_RUSSIAN);
+        menuEnglish.setActionCommand(HandlerCode.MENU_SETTINGS_LANGUAGE_ENGLISH);
+
+        menuRussian.addActionListener(settingsHandler);
+        menuEnglish.addActionListener(settingsHandler);
+
+        if (Settings.getLanguage().equals("ru")) menuRussian.setSelected(true);
+        else if (Settings.getLanguage().equals("en")) menuEnglish.setSelected(true);
+
+        language.add(menuRussian);
+        language.add(menuEnglish);
 
         addMenuItem(help, helpHandler, Text.get("MENU_HELP_ABOUT"), Style.ICON_MENU_HELP_ABOUT, HandlerCode.MENU_HELP_ABOUT);
 

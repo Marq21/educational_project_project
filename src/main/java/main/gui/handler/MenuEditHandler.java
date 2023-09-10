@@ -6,7 +6,6 @@ import main.settings.HandlerCode;
 import java.awt.event.ActionEvent;
 
 public class MenuEditHandler extends Handler {
-
     public MenuEditHandler(MainFrame frame) {
         super(frame);
     }

@@ -35,4 +35,6 @@ final public class HandlerCode {
     public static final String RIGHT = "RIGHT";
     public static final String STEP = "STEP";
     public static final String TYPE = "TYPE";
+    public static final String MENU_SETTINGS_LANGUAGE_RUSSIAN = "MENU_SETTINGS_LANGUAGE_RUSSIAN";
+    public static final String MENU_SETTINGS_LANGUAGE_ENGLISH = "MENU_SETTINGS_LANGUAGE_ENGLISH";
 }
