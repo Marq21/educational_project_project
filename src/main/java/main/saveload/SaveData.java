@@ -201,8 +201,8 @@ public final class SaveData {
         }
         for (Account a : accounts) {
             a.getCurrency().setRate(rates.get(a.getCurrency().getCode()));
-            saved = false;
         }
+        saved = false;
     }
 
     @Override

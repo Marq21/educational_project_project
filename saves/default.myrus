@@ -2,10 +2,10 @@
 <data>
     <accounts>
         <currency>
-            <base>true</base>
+            <base>false</base>
             <code>RUB</code>
             <on>true</on>
-            <rate>1.0</rate>
+            <rate>0.010211990715258043</rate>
             <title>Рубль</title>
         </currency>
         <startAmount>100000.0</startAmount>
@@ -13,10 +13,10 @@
     </accounts>
     <accounts>
         <currency>
-            <base>false</base>
+            <base>true</base>
             <code>USD</code>
             <on>true</on>
-            <rate>96.3411</rate>
+            <rate>1.0</rate>
             <title>Доллар</title>
         </currency>
         <startAmount>0.0</startAmount>
@@ -24,10 +24,10 @@
     </accounts>
     <accounts>
         <currency>
-            <base>true</base>
+            <base>false</base>
             <code>RUB</code>
             <on>true</on>
-            <rate>1.0</rate>
+            <rate>0.010211990715258043</rate>
             <title>Рубль</title>
         </currency>
         <startAmount>0.0</startAmount>
@@ -35,14 +35,25 @@
     </accounts>
     <accounts>
         <currency>
-            <base>true</base>
+            <base>false</base>
             <code>RUB</code>
             <on>true</on>
-            <rate>1.0</rate>
+            <rate>0.010211990715258043</rate>
             <title>Рубль</title>
         </currency>
         <startAmount>1000.0</startAmount>
         <title>Кошелёк</title>
+    </accounts>
+    <accounts>
+        <currency>
+            <base>false</base>
+            <code>BYN</code>
+            <on>true</on>
+            <rate>0.3050924134099778</rate>
+            <title>Рубль (Беларусский рубль)</title>
+        </currency>
+        <startAmount>2000.0</startAmount>
+        <title>Рубль (Беларусский рубль)</title>
     </accounts>
     <articles>
         <title>ЖКХ</title>
@@ -61,39 +72,65 @@
     </articles>
     <currencies>
         <base>true</base>
-        <code>RUB</code>
-        <on>true</on>
-        <rate>1.0</rate>
-        <title>Рубль</title>
-    </currencies>
-    <currencies>
-        <base>false</base>
         <code>USD</code>
         <on>true</on>
-        <rate>96.3411</rate>
+        <rate>1.0</rate>
         <title>Доллар</title>
     </currencies>
     <currencies>
         <base>false</base>
         <code>UAH</code>
-        <on>false</on>
-        <rate>2.6098</rate>
+        <on>true</on>
+        <rate>0.02708015697872128</rate>
         <title>Гривна</title>
     </currencies>
     <currencies>
         <base>false</base>
-        <code>EUR</code>
+        <code>RUB</code>
+        <on>true</on>
+        <rate>0.010211990715258043</rate>
+        <title>Рубль</title>
+    </currencies>
+    <currencies>
+        <base>false</base>
+        <code>BYN</code>
+        <on>true</on>
+        <rate>0.3050924134099778</rate>
+        <title>Рубль (Беларусский рубль)</title>
+    </currencies>
+    <currencies>
+        <base>false</base>
+        <code>UER</code>
         <on>false</on>
-        <rate>104.6108</rate>
+        <rate>0.3267866539882932</rate>
         <title>Евро</title>
     </currencies>
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
+                <code>BYN</code>
+                <on>true</on>
+                <rate>0.3050924134099778</rate>
+                <title>Рубль (Беларусский рубль)</title>
+            </currency>
+            <startAmount>2000.0</startAmount>
+            <title>Рубль (Беларусский рубль)</title>
+        </account>
+        <amount>-1500.0</amount>
+        <article>
+            <title>ЖКХ</title>
+        </article>
+        <date>2023-09-10T12:00:00+03:00</date>
+        <notice>За несколько месяцев</notice>
+    </transactions>
+    <transactions>
+        <account>
+            <currency>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -109,10 +146,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -128,10 +165,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>1000.0</startAmount>
@@ -147,10 +184,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>100000.0</startAmount>
@@ -166,10 +203,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -185,10 +222,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -204,10 +241,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>1000.0</startAmount>
@@ -223,10 +260,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>1000.0</startAmount>
@@ -242,10 +279,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -261,10 +298,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -280,10 +317,10 @@
     <transactions>
         <account>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>100000.0</startAmount>
@@ -300,10 +337,10 @@
         <date>2023-08-13T12:58:05.420+03:00</date>
         <fromAccount>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -313,10 +350,10 @@
         <notice></notice>
         <toAccount>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>1000.0</startAmount>
@@ -328,10 +365,10 @@
         <date>2023-08-13T12:58:05.420+03:00</date>
         <fromAccount>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -341,10 +378,10 @@
         <notice></notice>
         <toAccount>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>100000.0</startAmount>
@@ -356,10 +393,10 @@
         <date>2023-08-13T12:58:05.420+03:00</date>
         <fromAccount>
             <currency>
-                <base>true</base>
+                <base>false</base>
                 <code>RUB</code>
                 <on>true</on>
-                <rate>1.0</rate>
+                <rate>0.010211990715258043</rate>
                 <title>Рубль</title>
             </currency>
             <startAmount>0.0</startAmount>
@@ -369,10 +406,10 @@
         <notice></notice>
         <toAccount>
             <currency>
-                <base>false</base>
+                <base>true</base>
                 <code>USD</code>
                 <on>true</on>
-                <rate>65.0</rate>
+                <rate>1.0</rate>
                 <title>Доллар</title>
             </currency>
             <startAmount>0.0</startAmount>
